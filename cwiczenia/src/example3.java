@@ -1,6 +1,3 @@
-/**
- * In this class creates a simple window with title
- */
 import javax.swing.JFrame;
 
 
