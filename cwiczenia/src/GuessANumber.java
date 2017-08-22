@@ -6,9 +6,9 @@ import static java.lang.System.out;
 public class GuessANumber {
     public static void main(String args[]) {
         Scanner keyboard = new Scanner(in);
-        int guessAttemps = 0;
+        int guessAttemps = 1;
         int randomNumber = new Random().nextInt(6) + 1;
-        out.println("Welcome to Guess the number game.");
+        out.println("Welcome to 'Guess the number' game.");
         out.println("Guess a number (1-6)");
         int inputNumber = keyboard.nextInt();
 
@@ -17,10 +17,9 @@ public class GuessANumber {
             out.println("Guess a number (1-6)");
             inputNumber = keyboard.nextInt();
             guessAttemps ++;
-
         }
         out.println();
-        out.print("Congratulations! You win after " + guessAttemps + "attemp(s)" );
+        out.print("Congratulations! You win after " + guessAttemps + " attemp(s)" );
         keyboard.close();
     }
 }
