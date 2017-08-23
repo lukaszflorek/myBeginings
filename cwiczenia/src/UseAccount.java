@@ -21,5 +21,9 @@ public class UseAccount {
 
         out.println("You've got " + myAccount.balance + " and your mom's got " + momsAccount.balance);
         out.println("The difference is: " + difference);
+        myAccount.display();
+        out.println();
+        momsAccount.display();
+
     }
 }
