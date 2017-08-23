@@ -9,17 +9,17 @@ public class UseAccount {
         Scanner keyboard = new Scanner(in);
 
         out.println("Enter your account balance:");
-        myAccount.balance = keyboard.nextDouble();
-        myAccount.adress = "Warszawa";
-        myAccount.name = "Jan Kowalski";
+        myAccount.setBalance(keyboard.nextDouble());
+        myAccount.setAdress("Warszawa");
+        myAccount.setName("Jan Kowalski");
 
-        momsAccount.name = "Michalina Kowalska";
-        momsAccount.adress ="Lublin";
-        momsAccount.balance = 15944.00;
+        momsAccount.setName("Michalina Kowalska");
+        momsAccount.setAdress("Lublin");
+        momsAccount.setBalance(15944.00);
 
-        double difference = momsAccount.balance - myAccount.balance;
+        double difference = momsAccount.getBalance() - myAccount.getBalance();
 
-        out.println("You've got " + myAccount.balance + " and your mom's got " + momsAccount.balance);
+        out.println("You've got " + myAccount.getBalance() + " and your mom's got " + momsAccount.getBalance());
         out.println("The difference is: " + difference);
         myAccount.display();
         out.println();
