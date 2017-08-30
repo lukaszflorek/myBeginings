@@ -8,11 +8,13 @@ import java.util.Scanner;
 
 public class TemperatureMain {
     public static void main(String args[]) throws FileNotFoundException {
-        String pathName = "Temperature/temp_read";
-        File tempReadings = new File(pathName);
+        final String format = "%5.2f %s/n";
+        TemperaturePathFinder temperaturePath = new TemperaturePathFinder();
+        File tempReadings = new File(temperaturePath.getPathName());
         Temperature temp = new Temperature();
         Scanner seeker = new Scanner(tempReadings);
         temp.setNumber(seeker.nextDouble());
-        out.println("The temperature is: " + temp.getNumber() + " " + temp.getScale());
+        out.println("The temperature is: ");
+        out.printf(format, temp.getNumber(), temp.getScale());
     }
 }
