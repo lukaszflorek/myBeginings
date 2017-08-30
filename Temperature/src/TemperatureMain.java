@@ -8,7 +8,8 @@ import java.util.Scanner;
 
 public class TemperatureMain {
     public static void main(String args[]) throws FileNotFoundException {
-        File tempReadings = new File("Temperature/temp_read");
+        String pathName = "Temperature/temp_read";
+        File tempReadings = new File(pathName);
         Temperature temp = new Temperature();
         Scanner seeker = new Scanner(tempReadings);
         temp.setNumber(seeker.nextDouble());
