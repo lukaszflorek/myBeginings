@@ -22,9 +22,5 @@ public class TemperaturePathFinder {
     public void setTempPath(String tempPath) {
         this.tempPath = tempPath;
     }
-    /*
-    TODO Create a window to choose file
-     public void framePathCreator() {
-    }
-    */
+
 }
