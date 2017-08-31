@@ -1,19 +1,26 @@
 public class TemperaturePathFinder {
-    String pathName;
+    private String tempPath;
+    private String configPath;
 
     public TemperaturePathFinder() {
-        pathName = "Temperature/temp_read";
-    }
-    public String getPathName() {
-        return pathName;
+        tempPath = "Temperature/temp_table";
+        configPath= "Temperature/temperature.conf";
     }
 
-    public void setPathName(String pathName) {
-        this.pathName = pathName;
+    public String getConfigPath() {
+        return configPath;
     }
-    /*
-    TODO Create a window to choose file
-     public void framePathCreator() {
+
+    public void setConfigPath(String configPath) {
+        this.configPath = configPath;
     }
-    */
+
+    public String getTempPath() {
+        return tempPath;
+    }
+
+    public void setTempPath(String tempPath) {
+        this.tempPath = tempPath;
+    }
+
 }
