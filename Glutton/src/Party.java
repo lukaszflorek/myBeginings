@@ -1,18 +1,21 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-
 import static java.lang.System.out;
 
 public class Party {
     private static int numberOfTests;
-        public Party() throws FileNotFoundException {
+    public Party() throws FileNotFoundException {
         setNumberOfTests();
+        Scanner file = new Scanner(new File("input2"));
+        Greedy.setTotalOfGreedy(file.nextInt());
+        Cakes.setHowManyInTheBox(file.nextInt());
+        file.close();
         runTests();
     }
-    public void setNumberOfTests() throws FileNotFoundException {
-        Scanner file = new Scanner(new File("input"));
-        this.numberOfTests = file.nextInt();
+    public static void setNumberOfTests() throws FileNotFoundException {
+        Scanner file = new Scanner(new File("input2"));
+        numberOfTests = file.nextInt();
         file.close();
     }
     public void runTests() throws FileNotFoundException {
@@ -23,20 +26,18 @@ public class Party {
         }
     }
     public void createData() throws FileNotFoundException {
-        Scanner file = new Scanner(new File("input"));
-        Greedy.setTotalOfGreedy(file.nextInt());
+
         Greedy greedy[] = new Greedy[Greedy.getTotalOfGreedy()];
-        Cakes.setHowManyInTheBox(file.nextInt());
         int i =0;
         while (i <= Greedy.getTotalOfGreedy()) {
+            Scanner file = new Scanner(new File("input2"));
             greedy[i] = new Greedy();
             greedy[i].setEatingTime(file.nextInt());
             greedy[i].setCakePerDay(86400/greedy[i].getEatingTime());
             Greedy.addTotalOfCakesPerDay(greedy[i].getCakePerDay());
+            file.close();
         }
         Cakes.setHowManyBoxesNeeded(Greedy.getTotalOfCakesPerDay()/Cakes.getHowManyInTheBox());
-        file.close();
-
 
     }
     public int getNumberOfTests() {
