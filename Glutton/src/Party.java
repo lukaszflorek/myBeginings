@@ -25,9 +25,10 @@ public class Party {
         }
     }
     public void createData(Scanner file) throws FileNotFoundException {
-        Greedy greedy[] = new Greedy[Greedy.getTotalOfGreedy()];
-        int i =0;
-        while (i <= Greedy.getTotalOfGreedy()) {
+        int totalOfGreedy = Greedy.getTotalOfGreedy();
+        Greedy greedy[] = new Greedy[totalOfGreedy];
+        int i;
+        for (i=0; i < totalOfGreedy; i++) {
             greedy[i] = new Greedy();
             greedy[i].setEatingTime(file.nextInt());
             greedy[i].setCakePerDay(86400/greedy[i].getEatingTime());
