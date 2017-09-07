@@ -25,6 +25,9 @@ public class Greedy {
     public static int getTotalOfCakesPerDay() {
         return totalOfCakesPerDay;
     }
+    public static void setTotalOfCakesPerDay(int totalOfCakesPerDay1) {
+        Greedy.totalOfCakesPerDay = totalOfCakesPerDay1;
+    }
     public static void addTotalOfCakesPerDay(int totalOfCakesPerDay) {
         Greedy.totalOfCakesPerDay += totalOfCakesPerDay;
     }
