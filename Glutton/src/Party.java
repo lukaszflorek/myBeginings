@@ -12,18 +12,29 @@ public class Party {
         runTests(file);
         file.close();
     }
+    /**
+     * Checks if input file has correct data in.
+     * NOT READY YET
+     */
     public static void checkInput(Scanner file) {
-       boolean inputIsComplete;
-//       checking method
-       if (inputIsComplete = false) {
+       boolean inputIsComplete= true;
+//       checking method body
+       if (!inputIsComplete) {
            out.println("Bad input file");
+           file.close();
            System.exit(1);
        }
     }
+    /**
+     * Sets the test set number, which is the first int in input file.
+     */
     public static void setNumberOfTests(Scanner file) throws FileNotFoundException {
         numberOfTests = file.nextInt();
 
     }
+    /**
+     * Gets through sets in file.
+     */
     public void runTests(Scanner file) throws FileNotFoundException {
         int i;
         int numberOfTests = getNumberOfTests();
@@ -35,6 +46,9 @@ public class Party {
             Greedy.setTotalOfCakesPerDay(0);
         }
     }
+    /**
+     * Creates Greedy object array and fills the data.
+     */
     public void createData(Scanner file) throws FileNotFoundException {
         int totalOfGreedy = Greedy.getTotalOfGreedy();
         Greedy greedy[] = new Greedy[totalOfGreedy];
