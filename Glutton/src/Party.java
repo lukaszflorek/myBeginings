@@ -34,6 +34,7 @@ public class Party {
     }
     /**
      * Gets through sets in file.
+     * Sets number of greedy, then amount of cakes in a box.
      */
     public void runTests(Scanner file) throws FileNotFoundException {
         int i;
@@ -48,6 +49,10 @@ public class Party {
     }
     /**
      * Creates Greedy object array and fills the data.
+     * For loop creates greedy objects in array,
+     * sets its eating time
+     * and cake per day value (which is a number of second in a day divided by eating time).
+     * Finally, computes output data - how many boxes needed in particular set test.
      */
     public void createData(Scanner file) throws FileNotFoundException {
         int totalOfGreedy = Greedy.getTotalOfGreedy();
