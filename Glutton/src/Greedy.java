@@ -1,34 +1,34 @@
-public class Greedy {
+    class Greedy {
     private static int totalOfGreedy;
     private static int totalOfCakesPerDay;
     private int eatingTime;
     private int cakePerDay;
 
-    public int getCakePerDay() {
+    int getCakePerDay() {
         return cakePerDay;
     }
-    public void setCakePerDay(int cakePerDay) {
+    void setCakePerDay(int cakePerDay) {
         this.cakePerDay = cakePerDay;
     }
-    public void setEatingTime(int eatingTime) {
+    void setEatingTime(int eatingTime) {
         this.eatingTime = eatingTime;
     }
-    public int getEatingTime() {
+    int getEatingTime() {
         return eatingTime;
     }
-    public static int getTotalOfGreedy() {
+    static int getTotalOfGreedy() {
         return totalOfGreedy;
     }
-    public static void setTotalOfGreedy(int totalOfGreedy) {
+    static void setTotalOfGreedy(int totalOfGreedy) {
         Greedy.totalOfGreedy = totalOfGreedy;
     }
-    public static int getTotalOfCakesPerDay() {
+    static int getTotalOfCakesPerDay() {
         return totalOfCakesPerDay;
     }
-    public static void setTotalOfCakesPerDay(int totalOfCakesPerDay1) {
-        Greedy.totalOfCakesPerDay = totalOfCakesPerDay1;
+    static void setTotalOfCakesPerDay(int totalOfCakesPerDay) {
+        Greedy.totalOfCakesPerDay = totalOfCakesPerDay;
     }
-    public static void addTotalOfCakesPerDay(int totalOfCakesPerDay) {
-        Greedy.totalOfCakesPerDay += totalOfCakesPerDay;
+    static void addTotalOfCakesPerDay(int totalOfCakesPerDayAdd) {
+        Greedy.totalOfCakesPerDay += totalOfCakesPerDayAdd;
     }
 }
