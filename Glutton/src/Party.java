@@ -3,9 +3,9 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import static java.lang.System.out;
 
-public class Party {
+    class Party {
     private static int numberOfTests;
-    public Party() throws FileNotFoundException {
+    Party() throws FileNotFoundException {
         Scanner file = new Scanner(new File("input"));
         checkInput(file);
         setNumberOfTests(file);
@@ -16,7 +16,7 @@ public class Party {
      * Checks if input file has correct data in.
      * NOT READY YET
      */
-    public static void checkInput(Scanner file) {
+    private static void checkInput(Scanner file) {
        boolean inputIsComplete= true;
 //       checking method body
        if (!inputIsComplete) {
@@ -28,18 +28,16 @@ public class Party {
     /**
      * Sets the test set number, which is the first int in input file.
      */
-    public static void setNumberOfTests(Scanner file) throws FileNotFoundException {
+    private static void setNumberOfTests(Scanner file) throws FileNotFoundException {
         numberOfTests = file.nextInt();
-
     }
     /**
      * Gets through sets in file.
      * Sets number of greedy, then amount of cakes in a box.
      */
-    public void runTests(Scanner file) throws FileNotFoundException {
-        int i;
+    private void runTests(Scanner file) throws FileNotFoundException {
         int numberOfTests = getNumberOfTests();
-        for (i=0; i < numberOfTests; i++) {
+        for (int i=0; i < numberOfTests; i++) {
             Greedy.setTotalOfGreedy(file.nextInt());
             Cakes.setHowManyInTheBox(file.nextInt());
             createData(file);
@@ -54,11 +52,10 @@ public class Party {
      * and cake per day value (which is a number of second in a day divided by eating time).
      * Finally, computes output data - how many boxes needed in particular set test.
      */
-    public void createData(Scanner file) throws FileNotFoundException {
+    private void createData(Scanner file) throws FileNotFoundException {
         int totalOfGreedy = Greedy.getTotalOfGreedy();
         Greedy greedy[] = new Greedy[totalOfGreedy];
-        int i;
-        for (i=0; i < totalOfGreedy; i++) {
+        for (int i=0; i < totalOfGreedy; i++) {
             greedy[i] = new Greedy();
             greedy[i].setEatingTime(file.nextInt());
             greedy[i].setCakePerDay(86400/greedy[i].getEatingTime());
@@ -70,11 +67,10 @@ public class Party {
             Cakes.setHowManyBoxesNeeded(Greedy.getTotalOfCakesPerDay() / Cakes.getHowManyInTheBox());
         }
     }
-    public int getNumberOfTests() {
+    private int getNumberOfTests() {
         return numberOfTests;
     }
-    public void showResults() {
-
+    private void showResults() {
         out.println(Cakes.getHowManyBoxesNeeded());
     }
 }
