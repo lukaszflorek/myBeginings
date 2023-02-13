@@ -12,7 +12,7 @@ public class GuessANumber {
         out.println("Guess a number (1-6)");
         int inputNumber = keyboard.nextInt();
 
-        while (inputNumber != randomNumber) {
+        while (randomNumber != inputNumber) {
             out.println("Sorry, try again");
             out.println("Guess a number (1-6)");
             inputNumber = keyboard.nextInt();
