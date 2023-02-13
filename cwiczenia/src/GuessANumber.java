@@ -4,7 +4,7 @@ import static java.lang.System.in;
 import static java.lang.System.out;
 
 public class GuessANumber {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Scanner keyboard = new Scanner(in);
         int guessAttemps = 1;
         int randomNumber = new Random().nextInt(6) + 1;
